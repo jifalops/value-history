@@ -27,7 +27,16 @@ bower install --save value-history
 -->
 
 ```html
-
+<value-history
+  value="[[someObj]]"
+  history="{{history}}"
+  limit="[[limit]]">
+</value-history>
+<input placeholder="value" value="{{someObj::input}}" length="5"/><br/>
+<input placeholder="limit" value="{{limit::input}}" length="5"/>
+<template is="dom-repeat" items="[[history]]">
+  <div>[[item]]</div>
+</template>
 
 ```
 

@@ -27,6 +27,7 @@
           </value-history>
           <input placeholder="value" value="{{someObj::input}}" length="5"/><br/>
           <input placeholder="limit" value="{{limit::input}}" length="5"/>
+          Note: Empty values are added to the history but are not visible below.
           <template is="dom-repeat" items="[[history]]">
             <div>[[item]]</div>
           </template>

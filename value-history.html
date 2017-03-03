@@ -1,0 +1,60 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`value-history`
+Record property changes with this handy little FIFO element.
+
+@demo demo/index.html
+-->
+
+<dom-module id="value-history">
+  <template>
+  </template>
+  <script>
+    Polymer({
+      is: 'value-history',
+      properties: {
+        /**
+         * The value to record.
+         */
+        value: {
+          type: Object,
+          observer: '_valueChanged'
+        },
+        /**
+         * An array that is appended to every time `value` changes.
+         */
+        history: {
+          type: Array,
+          notify: true
+        },
+        /**
+         * The maximum length for `history`. A limit of 0 means no limit.
+         * When reached, further changes result in the oldest entry
+         * being shifted out.
+         */
+        limit: {
+          type: Number,
+          value: 25,
+          observer: '_limitChanged'
+        }
+      },
+      _valueChanged: function(value) {
+        this.history = this.history || [];
+        this.push('history', value);
+        if (this.limit > 0 && this.history.length > this.limit) {
+          this.shift('history');
+        }
+      },
+      _limitChanged: function(limit) {
+        if (limit > 0 && this.history && this.history.length > limit) {
+          var tmp = [];
+          for (var i = this.history.length - limit; i < this.history.length; i++) {
+            tmp.push(this.history[i]);
+          }
+          this.history = tmp;
+        }
+      },
+    });
+  </script>
+</dom-module>

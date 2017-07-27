@@ -6,7 +6,8 @@ Record property changes with this handy little element.
 ## Installation
 
 ```
-bower install --save value-history
+bower i -S value-history        # Polymer 2.0 hybrid (1.x compatible)
+bower i -S value-history#0.1.0  # Polymer 1.x based
 ```
 
 ## Usage
@@ -46,12 +47,6 @@ Full demo:
 
 API: [webcomponents.org](https://www.webcomponents.org/element/jifalops/value-history/value-history)
 
-
-## Releases
-Version | Description
-------- | -----------
-0.2.0 | Polymer 1.x and 2.0 compatible (hybrid mode)
-0.1.0 | Polymer 1.x based
 
 ## Contributing
 

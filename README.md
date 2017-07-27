@@ -17,6 +17,7 @@ for debugging and testing.
 * Optionally limit the history to a certain length.
 
 ## Demo
+<i style="font-size: small">Polymer bindings may not work in this readme demo.</i>
 <!--
 ```
 <custom-element-demo>
@@ -38,7 +39,6 @@ for debugging and testing.
 <dom-repeat items="[[history]]">
   <template>[[item]]<br/></template>
 </dom-repeat>
-<i style="font-size: small">Polymer bindings may not work in this readme demo.</i>
 ```
 
 Full demo:

@@ -10,6 +10,8 @@ bower install --save value-history
 ```
 
 ## Usage
+Primarily for use with `app-location` in client-side routed apps, or
+for debugging and testing.
 * Tell it which property to watch for changes
 * Optionally limit the history to a certain length.
 
@@ -17,27 +19,25 @@ bower install --save value-history
 <!--
 ```
 <custom-element-demo>
+  <dom-bind>
   <template is="dom-bind">
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>    
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="value-history.html">
     <next-code-block></next-code-block>
   </template>
+  </dom-bind>
 </custom-element-demo>
 ```
 -->
 
 ```html
-<value-history
-  value="[[someObj]]"
-  history="{{history}}"
-  limit="[[limit]]">
-</value-history>
-<input placeholder="value" value="{{someObj::input}}" length="5"/><br/>
+<value-history value="[[val]]" history="{{history}}" limit="[[limit]]"></value-history>
+<input placeholder="value" value="{{val::input}}" length="5"/><br/>
 <input placeholder="limit" value="{{limit::input}}" length="5"/>
-<template is="dom-repeat" items="[[history]]">
-  <div>[[item]]</div>
-</template>
-
+<dom-repeat items="[[history]]">
+  <template>[[item]]<br/></template>
+</dom-repeat>
+<i style="font-size: small">Polymer bindings may not work in this readme demo.</i>
 ```
 
 Full demo:
@@ -45,8 +45,13 @@ Full demo:
 | [github](https://jifalops.github.io/value-history/components/value-history/demo/).
 
 API: [webcomponents.org](https://www.webcomponents.org/element/jifalops/value-history/value-history)
-| [github](https://jifalops.github.io/value-history).
 
+
+## Releases
+Version | Description
+------- | -----------
+0.2.0 | Polymer 1.x and 2.0 compatible (hybrid mode)
+0.1.0 | Polymer 1.x based
 
 ## Contributing
 

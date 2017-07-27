@@ -12,26 +12,29 @@
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
     <link rel="import" href="../value-history.html">
 
-    <style is="custom-style" include="demo-pages-shared-styles">
-    </style>
+    <custom-style>
+      <style include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
   </head>
   <body>
     <div class="vertical-section-container centered">
       <h3>Basic value-history demo</h3>
       <demo-snippet>
-        <template is="dom-bind">
-          <value-history
-            value="[[someObj]]"
-            history="{{history}}"
-            limit="[[limit]]">
-          </value-history>
-          <input placeholder="value" value="{{someObj::input}}" length="5"/><br/>
-          <input placeholder="limit" value="{{limit::input}}" length="5"/>
-          Note: Empty values are added to the history but are not visible below.
-          <template is="dom-repeat" items="[[history]]">
-            <div>[[item]]</div>
+        <dom-bind>
+          <template>
+            <value-history
+              value="[[someObj]]"
+              history="{{history}}"
+              limit="[[limit]]">
+            </value-history>
+            <input placeholder="value" value="{{someObj::input}}" length="5"/><br/>
+            <input placeholder="limit" value="{{limit::input}}" length="5"/><br/>
+            <dom-repeat items="[[history]]">
+              <template>[[item]]<br/></template>
+            </dom-repeat>
           </template>
-        </template>
+        </dom-bind>
       </demo-snippet>
     </div>
   </body>

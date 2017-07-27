@@ -1,15 +1,20 @@
 {
   "name": "value-history",
   "description": "Record property changes with this handy little element.",
+  "authors": ["Jacob Phillips (https://github.com/jifalops)"],
+  "license": "MIT",
   "main": "value-history.html",
+  "keywords": [
+    "value",
+    "history",
+    "testing"
+  ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^2.0.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
-    "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
-  },
-  "license": "MIT"
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  }
 }
